@@ -31,6 +31,8 @@ model Game {
   homeTeam String
   awayTeam String
   gameTime DateTime
+  grp String
+  rod String
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
