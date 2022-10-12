@@ -2,13 +2,16 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 export const list = async ctx => {
-  const currentRound = ctx.request.query.rod
-  const currentGroup = ctx.request.query.grp
+  // const currentRound = ctx.request.query.rod
+  // const currentGroup = ctx.request.query.grp
 
-  const where = currentRound || currentGroup ? {
-    rod: currentRound,
-    grp: currentGroup
-  } : {}
+  // // const where = (currentRound || currentGroup) ? {
+  // //   rod: currentRound,
+  // //   grp: currentGroup
+  // // } : { }
+
+  const where = {}
+
 
   try {
     const games = await prisma.game.findMany({ where })
