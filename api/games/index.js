@@ -7,15 +7,14 @@ export const list = async ctx => {
 
   const where = currentRound ? {
     rod: {
-      gte: currentRound,
-      lt: currentRound + currentRound
+      gte: currentRound
     }
   } : currentGroup ? {
     grp: {
-      gte: currentGroup,
-      lt: currentGroup + currentGroup
+      gte: currentGroup
     }
   } : {}
+
 
   try {
     const games = await prisma.game.findMany({ where })
